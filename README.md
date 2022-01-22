@@ -4,7 +4,7 @@ Neste repositório está o projeto desenvolvido para a Avaliação Final da disc
 
 
 
-## Organização do repositório ------------------------ VER!!!
+## Organização do repositório 
 
 _O repositório está organizado da seguite maneira:_
 * Parte 1 - Estudo da API TMDB 
