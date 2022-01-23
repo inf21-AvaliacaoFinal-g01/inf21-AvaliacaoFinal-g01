@@ -12,8 +12,8 @@ _O repositório está organizado da seguite maneira:_
 * **Código Fonte** está na pasta [src](src/).
 * Capítulos do relatório estão na pasta [doc](doc/).
 * [Documento OpenAPI](src/api/openapi.yaml) inicial.
-* [Documento MYSQL](.sql) para criação da Base de Dados. ---- Acrescentar caminho
-* [Documento Docker-compose](docker-compose.yaml) para puxar as imagens dos repositórios DockerHub e montar a aplicação.
+* [Documento MYSQL](Queries_base_de_dados.sql) para criação da Base de Dados.
+* [Documento Docker-compose](src/docker-compose.yaml) para puxar as imagens dos repositórios DockerHub e montar a aplicação.
 
 <br>
 
