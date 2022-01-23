@@ -4,55 +4,54 @@ Neste repositório está o projeto desenvolvido para a disciplina 'Desenvolvimen
 
 ## Tema 
 
-Este trabalho tem como âmbito o desenho e criação de um serviço web que permite a consulta de informação de filmes.
+Este trabalho tem como âmbito o desenho e criação de um serviço web que relaciona recursos. Tais recursos como 'Movies', 'Genres', 'Actor' e 'Director'.   
 
 ## Organização do repositório 
 
 _O repositório está organizado da seguite maneira:_
-* **Source code** está no [src folder](src/).
-* Capítulos do relatório estão no [doc folder](doc/).
+* **Código Fonte da API** está na pasta [src](src/API).
+* **Código Fonte do React-Admin** está na pasta [src](src/).
+* Capítulos do relatório estão na pasta [doc](doc/).
+* [Documento MYSQL](.sql) para criação da Base de Dados. ---- Acrescentar caminho
+* [Documento Docker-compose](docker-compose.yaml) para puxar as imagens dos repositórios DockerHub e montar a aplicação.
 
 
 ## Galeria 
 
-![Recursos1](doc/images/image11.png)
-![Recursos2](doc/images/image12.png)
-![Recursos3](doc/images/image13.png)
+| ![recursos](doc/images/image2.png)           | ![Get](doc/images/image3.png)  |
+| ---------------------------- | ----------- |
+| GET (Filmes)                 | ![Put](doc/images/image4.png)       |
+
 
 ## Tecnologias 
 
 _As tecnologias usadas neste projeto, foram as seguites:_
 * Javascript
-* HTML
-* TypeScript
-* Shell
-* Docker
-* Yaml
+* NodeJS
 * MySQL
-* CSS
+* OpenAPI
 
 
 ### Frameworks e Livrarias 
 
+_Did you use any aditional libraries? Describe them here._
 * Docker
 * NodeJS
-* Loopback4
 * React-Admin
 
 ## Relatório
 _Estão adicionados um documento por capítulo_
 
-### Apresentação do projeto
-* Capítulo 1: [Apresentação do projeto](doc/c1.md)
+### Apresentação do Projeto
+* Capítulo 1: [Apresentação do Projeto](doc/c1.md)
 ### Recursos
 * Capítulo 2: [Recursos](doc/c2.md)
 ### Produto
 * Capítulo 3: [Produto](doc/c3.md)
-### Apresentação
-* Capítulo 4: [Apresentação](doc/c4.md)
+
+<br>
 
 ## Grupo _01_
 * Ana Filipa Azevedo [@AnaAzevedo](https://github.com/AnaAzevedo2) 
 * Mariana Lopes [@MarianaLopes](https://github.com/marlope02) 
 * Mário Rodrigues [@MarioRodrigues](https://github.com/MarioRodrigues2304)
-
