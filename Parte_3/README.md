@@ -20,7 +20,7 @@ _O repositório está organizado da seguite maneira:_
 
 | ![recursos](doc/images/image1.png)           | ![React](doc/images/image2.png)  |
 |  ------------- | -------------- |
- 
+| ![react2](doc/images/image3.png)           | ![React3](doc/images/image4.png)  |
 
 
 ## Tecnologias 
