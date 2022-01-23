@@ -12,8 +12,8 @@ _O repositório está organizado da seguite maneira:_
 * Parte 3 
 
 ## Parte 1 - Estudo da API TMDB
-* [Apresentação da API](Parte1/Apresentaç¦o_Parte1.pdf)
-* [Collection no Postman](Parte1)
+* [Apresentação da API](Parte_1/Apresentaç¦o_Parte1.pdf)
+* [Collection no Postman](Parte_1)
 
 ## Parte 2 
 ### Tema 
@@ -21,8 +21,8 @@ _Este trabalho tem como âmbito o desenho e criação de um serviço web que per
 
 ### Organização
 _A parte 2 está organizada da seguite maneira:_
-* **Source code** está no [src folder](../Parte2/src).
-* Capítulos do relatório estão no [doc folder](Parte2/doc).
+* **Source code** está no [src folder](../Parte_2/src).
+* Capítulos do relatório estão no [doc folder](Parte_2/doc).
 
 
 
