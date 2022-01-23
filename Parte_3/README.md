@@ -19,7 +19,8 @@ _O repositório está organizado da seguite maneira:_
 ## Galeria 
 
 | ![recursos](doc/images/image1.png)           | ![React](doc/images/image2.png)  |
-
+|  ------------- | -------------- |
+ 
 
 
 ## Tecnologias 
