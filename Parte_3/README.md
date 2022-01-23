@@ -34,7 +34,6 @@ _As tecnologias usadas neste projeto, foram as seguites:_
 
 ### Frameworks e Livrarias 
 
-_Did you use any aditional libraries? Describe them here._
 * Docker
 * NodeJS
 * React-Admin
