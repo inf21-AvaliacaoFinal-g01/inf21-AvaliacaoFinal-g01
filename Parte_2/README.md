@@ -14,14 +14,10 @@ _O repositório está organizado da seguite maneira:_
 * [Documento OpenAPI](src/api/openapi.yaml) inicial.
 * [Documento MYSQL](.sql) para criação da Base de Dados. ---- Acrescentar caminho
 * [Documento Docker-compose](docker-compose.yaml) para puxar as imagens dos repositórios DockerHub e montar a aplicação.
+
+<br>
+
 * Docker - https://hub.docker.com/u/inf21dw1g01
-
-
-## Galeria 
-
-| Métodos                      | Resultado   |
-| ---------------------------- | ----------- |
-| GET (Filmes)                 | ![Get Filmes](doc/images/image4.png)       |
 
 
 ## Tecnologias 
