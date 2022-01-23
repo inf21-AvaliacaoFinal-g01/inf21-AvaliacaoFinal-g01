@@ -17,7 +17,7 @@ _O repositório está organizado da seguite maneira:_
 
 <br>
 
-* Docker - https://hub.docker.com/u/inf21dw1g01
+* **Docker** - https://hub.docker.com/u/inf21dw1g01
 
 
 ## Tecnologias 
