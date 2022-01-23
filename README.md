@@ -21,7 +21,7 @@ _Este trabalho tem como âmbito o desenho e criação de um serviço web que per
 
 ### Organização
 _A parte 2 está organizada da seguite maneira:_
-* **Source code** está no [src folder](Parte2/src).
+* **Source code** está no [src folder](../Parte2/src).
 * Capítulos do relatório estão no [doc folder](Parte2/doc).
 
 
