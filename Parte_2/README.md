@@ -19,6 +19,14 @@ _O repositório está organizado da seguite maneira:_
 
 * **Docker** - https://hub.docker.com/u/inf21dw1g01
 
+<br>
+
+## Galeria 
+
+| ![recursos](doc/images/image2.png)           | ![Get](doc/images/image3.png)  |
+| ---------------------------- | ----------- |
+| ![Put](doc/images/image4.png)                | 
+
 
 ## Tecnologias 
 
