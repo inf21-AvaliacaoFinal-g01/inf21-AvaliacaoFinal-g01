@@ -13,7 +13,7 @@ _O repositório está organizado da seguite maneira:_
 
 ## Parte 1 - Estudo da API TMDB
 * [Apresentação da API](../Parte1/Apresentaç¦o_Parte1.pdf)
-* [Collection no Postman](../Parte1/TMDB API.postman_collection.json)
+* [Collection no Postman](../Parte1)
 
 ## Parte 2 
 ### Tema 
