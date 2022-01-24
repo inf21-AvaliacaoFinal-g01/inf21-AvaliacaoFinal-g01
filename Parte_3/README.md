@@ -9,11 +9,11 @@ Este trabalho tem como âmbito o desenho e criação de um serviço web que rela
 ## Organização do repositório 
 
 _O repositório está organizado da seguite maneira:_
-* **Código Fonte da API** está na pasta [src](src/API).
+* **Código Fonte da API** está na pasta [src](src/).
 * **Código Fonte do React-Admin** está na pasta [src](src/).
 * Capítulos do relatório estão na pasta [doc](doc/).
-* [Documento MYSQL](.sql) para criação da Base de Dados. ---- Acrescentar caminho
-* [Documento Docker-compose](docker-compose.yaml) para puxar as imagens dos repositórios DockerHub e montar a aplicação.
+* [Documento MYSQL](Queries_base_de_dados.sql) para criação da Base de Dados. ---- Acrescentar caminho
+* [Documento Docker-compose](docker-compose.yml) para puxar as imagens dos repositórios DockerHub e montar a aplicação.
 
 
 ## Galeria 
