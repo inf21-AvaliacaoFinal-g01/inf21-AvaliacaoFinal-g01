@@ -12,7 +12,7 @@ module.exports.creategenre = function creategenre (req, res, next, body) {
       utils.writeJson(res, response);
     });
 };
-
+/*
 module.exports.deletegenre = function deletegenre (req, res, next, id) {
   genresController.deletegenre(id)
     .then(function (response) {
@@ -21,7 +21,7 @@ module.exports.deletegenre = function deletegenre (req, res, next, id) {
     .catch(function (response) {
       utils.writeJson(res, response);
     });
-};
+};*/
 
 module.exports.retrievegenre = function retrievegenre (req, res, next, id) {
   genresController.retrievegenre(id)

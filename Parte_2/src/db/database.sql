@@ -36,7 +36,7 @@ CREATE TABLE `genre`(
     PRIMARY KEY (`id`)
 )ENGINE=InnoDB; 
 
-DROP TABLE IF EXISTS `movie_genre`;
+
 CREATE TABLE `movie_genre`(
 	`id` int NOT NULL,
     `movie_id` int NOT NULL,
@@ -46,6 +46,20 @@ CREATE TABLE `movie_genre`(
     -- KEY `movies_id_fk_idx` (`movie_id`),
     -- KEY `genre_id_fk_idx` (`genre_id`)
 )ENGINE=InnoDB;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_movie`(IN meuid int)
+BEGIN
+
+select meuid;
+
+ delete from movie_genre where movie_id=meuid;
+ 
+ delete from movies where id=meuid;
+ 
+END$$
+DELIMITER ;
 
 
 INSERT into `actor` (`name`) VALUES 

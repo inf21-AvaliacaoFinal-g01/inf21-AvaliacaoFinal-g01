@@ -311,34 +311,6 @@ paths:
         "404":
           description: id not found
       x-swagger-router-controller: genresController
-    delete:
-      tags:
-      - genresController
-      summary: Delete genre
-      operationId: deletegenre
-      parameters:
-      - name: id
-        in: path
-        required: true
-        style: simple
-        explode: false
-        schema:
-          minimum: 1
-          type: integer
-          format: int64
-        examples:
-          one:
-            summary: Delete genre id 1
-            value: 1
-          two:
-            summary: Delete genre id 2
-            value: 2
-      responses:
-        "204":
-          description: No Content
-        "404":
-          description: id not found
-      x-swagger-router-controller: genresController
   /genres/{id}/Movie:
     get:
       tags:

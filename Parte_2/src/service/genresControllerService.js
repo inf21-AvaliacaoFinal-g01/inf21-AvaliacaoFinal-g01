@@ -32,7 +32,7 @@ exports.creategenre = function(body) {
  **/
 
 
-
+/*
 exports.deletegenre = function(id) {
   return new Promise(function (resolve, reject) {
     var sql = "";
@@ -47,7 +47,7 @@ exports.deletegenre = function(id) {
       }
     });
   });
-}
+}*/
 
 
 /**

@@ -1,0 +1,787 @@
+openapi: 3.0.0
+info:
+  title: Exame Epoca Especial
+  description: Api de filmes
+  contact:
+    name: "Mariana Pereira A038553, Mário Rodrigues A039139 e Ana Azevedo A039600"
+    email: A038553@ismai.pt
+  version: 0.0.1
+servers:
+- url: http://localhost:8080
+  description: standard
+  variables:
+    basePath:
+      default: /
+paths:
+  /movies:
+    get:
+      tags:
+      - moviesController
+      summary: Retrieve movies
+      operationId: retrievemovies
+      responses:
+        "200":
+          description: Array of movies instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/movie'
+                x-content-type: application/json
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+      x-swagger-router-controller: moviesController
+    post:
+      tags:
+      - moviesController
+      summary: Create movie
+      operationId: createmovie
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/movie'
+            examples:
+              movieExample01:
+                $ref: '#/components/examples/movieExample01'
+              movieExample02:
+                $ref: '#/components/examples/movieExample02'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/movie'
+            examples:
+              movieExample01:
+                $ref: '#/components/examples/movieExample01'
+              movieExample02:
+                $ref: '#/components/examples/movieExample02'
+      responses:
+        "200":
+          description: Create a movie instance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/movie'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/movie'
+        "400":
+          description: Bad request
+      x-swagger-router-controller: moviesController
+  /movies/{id}:
+    get:
+      tags:
+      - moviesController
+      summary: Retrieve movie
+      operationId: retrievemovie
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Retrieve movie id 1
+            value: 1
+          two:
+            summary: Retrieve movie id 2
+            value: 2
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/movie'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/movie'
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: moviesController
+    put:
+      tags:
+      - moviesController
+      summary: Update movie
+      operationId: updatemovie
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Update movie id 1
+            value: 1
+          two:
+            summary: Update movie id 2
+            value: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/movie'
+            examples:
+              AeroportoExample01:
+                $ref: '#/components/examples/movieExample01'
+              AeroportoExample02:
+                $ref: '#/components/examples/movieExample02'
+        required: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: movie PUT success
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: moviesController
+    delete:
+      tags:
+      - moviesController
+      summary: Delete movie
+      operationId: deletemovie
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Delete movie id 1
+            value: 1
+          two:
+            summary: Delete movie id 2
+            value: 2
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: id not found
+      x-swagger-router-controller: moviesController
+  /genres:
+    get:
+      tags:
+      - genresController
+      summary: Retrieve genres
+      operationId: retrievegenres
+      responses:
+        "200":
+          description: Array dos genres
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/genre'
+                x-content-type: application/json
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+      x-swagger-router-controller: genresController
+    post:
+      tags:
+      - genresController
+      summary: Create genre
+      operationId: creategenre
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/genre'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/genre'
+      responses:
+        "200":
+          description: Create a genre instance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/genre'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/genre'
+        "400":
+          description: Bad request
+      x-swagger-router-controller: genresController
+  /genre/{id}:
+    get:
+      tags:
+      - genresController
+      summary: Retrieve genre
+      operationId: retrievegenre
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Retrieve genre id 1
+            value: 1
+          two:
+            summary: Retrieve genre id 2
+            value: 2
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/genre'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/genre'
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: genresController
+    put:
+      tags:
+      - genresController
+      summary: Update genre
+      operationId: updategenre
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Update genre id 1
+            value: 1
+          two:
+            summary: Update genre id 2
+            value: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/genre'
+            examples:
+              genreExample01:
+                $ref: '#/components/examples/genreExample01'
+              genreExample02:
+                $ref: '#/components/examples/genreExample02'
+        required: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: genre PUT success
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: genresController
+    delete:
+      tags:
+      - genresController
+      summary: Delete genre
+      operationId: deletegenre
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Delete genre id 1
+            value: 1
+          two:
+            summary: Delete genre id 2
+            value: 2
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: id not found
+      x-swagger-router-controller: genresController
+  /genres/{id}/filme:
+    get:
+      tags:
+      - genresController
+      summary: Retrieve genres
+      operationId: retrievegenresfilms
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Retrive movies by genre id 1
+            value: 1
+          two:
+            summary: Retrive movies by genre id 2
+            value: 2
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: id not found
+      x-swagger-router-controller: genresController
+  /actor:
+    get:
+      tags:
+      - actorController
+      summary: Retrieve actors
+      operationId: retrieveactors
+      responses:
+        "200":
+          description: Array of actor instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/actor'
+                x-content-type: application/json
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+      x-swagger-router-controller: actorController
+    post:
+      tags:
+      - actorController
+      summary: Create actor
+      operationId: createactor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/actor'
+            examples:
+              movieExample01:
+                $ref: '#/components/examples/actorExample01'
+              movieExample02:
+                $ref: '#/components/examples/actorExample02'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/actor'
+            examples:
+              movieExample01:
+                $ref: '#/components/examples/actorExample01'
+              movieExample02:
+                $ref: '#/components/examples/actorExample02'
+      responses:
+        "200":
+          description: Create a actor instance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/actor'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/actor'
+        "400":
+          description: Bad request
+      x-swagger-router-controller: actorController
+  /actor/{id}:
+    get:
+      tags:
+      - actorController
+      summary: Retrieve actor
+      operationId: retrieveactor
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Retrieve actor id 1
+            value: 1
+          two:
+            summary: Retrieve actor id 2
+            value: 2
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/actor'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/actor'
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: actorController
+    put:
+      tags:
+      - actorController
+      summary: Update actor
+      operationId: actormovie
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Update actor id 1
+            value: 1
+          two:
+            summary: Update actor id 2
+            value: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/actor'
+            examples:
+              AeroportoExample01:
+                $ref: '#/components/examples/actorExample01'
+              AeroportoExample02:
+                $ref: '#/components/examples/actorExample02'
+        required: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: actor PUT success
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: actorController
+  /director:
+    get:
+      tags:
+      - directorController
+      summary: Retrieve directors
+      operationId: retrievedirectors
+      responses:
+        "200":
+          description: Array of director instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/director'
+                x-content-type: application/json
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+      x-swagger-router-controller: directorController
+    post:
+      tags:
+      - directorController
+      summary: Create director
+      operationId: createdirector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/director'
+            examples:
+              movieExample01:
+                $ref: '#/components/examples/directorExample01'
+              movieExample02:
+                $ref: '#/components/examples/directorExample02'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/director'
+            examples:
+              movieExample01:
+                $ref: '#/components/examples/directorExample01'
+              movieExample02:
+                $ref: '#/components/examples/directorExample02'
+      responses:
+        "200":
+          description: Create a director instance
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/director'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/director'
+        "400":
+          description: Bad request
+      x-swagger-router-controller: directorController
+  /director/{id}:
+    get:
+      tags:
+      - directorController
+      summary: Retrieve director
+      operationId: retrievedirector
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Retrieve director id 1
+            value: 1
+          two:
+            summary: Retrieve director id 2
+            value: 2
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/director'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/director'
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: directorController
+    put:
+      tags:
+      - directorController
+      summary: Update director
+      operationId: directormovie
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          minimum: 1
+          type: integer
+          format: int64
+        examples:
+          one:
+            summary: Update director id 1
+            value: 1
+          two:
+            summary: Update director id 2
+            value: 2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/director'
+            examples:
+              directorExample01:
+                $ref: '#/components/examples/directorExample01'
+              directorExample02:
+                $ref: '#/components/examples/directorExample02'
+        required: true
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                description: director PUT success
+                x-content-type: application/json
+        "400":
+          description: Bad request
+        "404":
+          description: id not found
+      x-swagger-router-controller: directorController
+components:
+  schemas:
+    director:
+      title: director
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+      additionalProperties: false
+      example:
+        name: name
+    actor:
+      title: actor
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+      additionalProperties: false
+      example:
+        name: name
+    genre:
+      title: genre
+      required:
+      - genre
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        genre:
+          type: string
+      additionalProperties: false
+      example:
+        genre: genre
+    movie:
+      title: movie
+      required:
+      - actor_id
+      - director_id
+      - language
+      - original_title
+      - release_date
+      - runtime
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        language:
+          type: string
+        original_title:
+          type: string
+        release_date:
+          type: string
+          format: date
+        runtime:
+          type: integer
+          format: int32
+        actor_id:
+          type: integer
+          format: int32
+        director_id:
+          type: integer
+          format: int32
+      additionalProperties: false
+      example:
+        original_title: Title
+        release_date: 2000-02-11
+        runtime: 123
+        language: language
+        actor_id: 1
+        director_id: 1
+    inline_response_200:
+      type: object
+      properties:
+        movie:
+          type: array
+          items:
+            $ref: '#/components/schemas/movie'
+      xml:
+        name: movies
+    inline_response_200_1:
+      type: object
+      properties:
+        genre:
+          type: array
+          items:
+            $ref: '#/components/schemas/genre'
+      xml:
+        name: genres
+  examples:
+    genreExample01:
+      value:
+        id: 4
+        genre: Comedy
+    genreExample02:
+      value:
+        id: 18
+        genre: war
+    movieExample01:
+      value:
+        original_title: Spider-Man_No Way Home
+        release_date: 2002-02-02
+        runtime: 148
+        language: en
+        actor_id: 1
+        director_id: 1
+    movieExample02:
+      value:
+        original_title: The Second Arrival
+        release_date: 2002-02-02
+        runtime: 101
+        language: en
+        actor_id: 2
+        director_id: 2
+    actorExample01:
+      value:
+        name: Juan
+    actorExample02:
+      value:
+        name: Helena
+    directorExample01:
+      value:
+        name: Juan
+    directorExample02:
+      value:
+        name: Helena

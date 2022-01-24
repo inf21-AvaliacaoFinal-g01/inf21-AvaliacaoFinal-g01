@@ -13,7 +13,7 @@ var sql = require('../utils/db.js');
 exports.createmovie = function(body) {
   return new Promise(function (resolve, reject) {
     console.log(body);
-    sql.query("INSERT INTO movies (language, original_title, release_date, runtime, actor_id, director_id) Values(?,?,?,?,?,?)", [body.language, body.original_title, body.release_date, body.runtime. body.actor_id, body.director_id], function (err, res) {
+    sql.query("INSERT INTO movies (language, original_title, release_date, runtime, actor_id, director_id) Values(?,?,?,?,?,?)", [body.language, body.original_title, body.release_date, body.runtime, body.actor_id, body.director_id], function (err, res) {
       if (err) {
         console.log(err);
         reject(err);
@@ -32,10 +32,11 @@ exports.createmovie = function(body) {
  * id Long 
  * no response value expected for this operation
  **/
-exports.deletemovie = function(id) {
+ exports.deletemovie = function(id) {
   return new Promise(function (resolve, reject) {
-    var sql = "SET @meuid = ?;delete * FROM movie_genre WHERE movie_id = @meuid;delete from movie WHERE id = @meuid;";
-    sql.query(sql, [id], function (err, res) {
+    //var cmdsql = "SET @meuid = ?; delete FROM movie_genre WHERE movie_id =  @meuid; delete from movies WHERE id =  @meuid;";
+    //var cmdsql = "delete from movie_genre where movie_id = ?"
+    sql.query("CALL sp_delete_movie(?);", [id], function (err, res) {
       if (err || !res.affectedRows) {
         console.log(err);
         console.log(res);
