@@ -32,8 +32,8 @@ _Este trabalho tem como âmbito o desenho e criação de um serviço web que per
 
 ### Organização
 _A parte 3 está organizada da seguite maneira:_
-* **Source code** está no [src folder]().
-* Capítulos do relatório estão no [doc folder]().
+* **Source code** está no [src folder](Parte_3/src).
+* Capítulos do relatório estão no [doc folder](Parte_3/doc).
 
 
 _____
